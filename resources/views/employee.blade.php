@@ -61,12 +61,5 @@
                 aria-label="qualifications">
                 <b><a href="#" class="underline">Qualifications</a></b> tab is selected
             </div>
-            <div x-show="selectedTab === 'comments'" id="tabpanelComments" role="tabpanel" aria-label="comments">
-                <b><a href="#" class="underline">Comments</a></b> tab is selected
-            </div>
-            <div x-show="selectedTab === 'saved'" id="tabpanelSaved" role="tabpanel" aria-label="saved">
-                <b><a href="#" class="underline">Saved</a></b> tab is selected
-            </div>
         </div>
-
 </x-app-layout>

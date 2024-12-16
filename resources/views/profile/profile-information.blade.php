@@ -1,4 +1,3 @@
-
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
@@ -16,13 +15,18 @@
                 <div class="mb-8">
                     <h2 class="text-xl font-semibold text-gray-700 dark:text-gray-300 mb-4">Name</h2>
                     <div class="space-y-2">
-                        <p class="text-gray-600 dark:text-gray-400">First Name: <span class="font-medium">{{$employee->first_name}}</span></p>
-                        <p class="text-gray-600 dark:text-gray-400">Middle Name: <span class="font-medium">{{$employee->middle_name}}</span></p>
-                        <p class="text-gray-600 dark:text-gray-400">Last Name: <span class="font-medium">{{$employee->last_name}}</span></p>
-                        <p class="text-gray-600 dark:text-gray-400 mt-4">Full Name: <span class="font-semibold text-gray-800 dark:text-gray-100">{{$employee->full_name}}</span></p>
+                        <p class="text-gray-600 dark:text-gray-400">First Name: <span
+                                class="font-medium">{{ $employee->first_name }}</span></p>
+                        <p class="text-gray-600 dark:text-gray-400">Middle Name: <span
+                                class="font-medium">{{ $employee->middle_name }}</span></p>
+                        <p class="text-gray-600 dark:text-gray-400">Last Name: <span
+                                class="font-medium">{{ $employee->last_name }}</span></p>
+                        <p class="text-gray-600 dark:text-gray-400 mt-4">Full Name: <span
+                                class="font-semibold text-gray-800 dark:text-gray-100">{{ $employee->full_name }}</span>
+                        </p>
                     </div>
                 </div>
-    <br><br>
+                <br><br>
                 <!-- Address Section -->
                 <div class="mb-8">
                     <h2 class="text-xl font-semibold text-gray-700 dark:text-gray-300 mb-4">Address</h2>
@@ -47,13 +51,15 @@
                     </div>
                 </div>
                 <br><br>
-    
+
                 <!-- Employee ID -->
                 <div>
-                    <p class="text-gray-600 dark:text-gray-400">Employee ID: <span class="font-semibold text-gray-800 dark:text-gray-100">{{$employee->employee_id}}</span></p>
+                    <p class="text-gray-600 dark:text-gray-400">Employee ID: <span
+                            class="font-semibold text-gray-800 dark:text-gray-100">{{ $employee->employee_id }}</span>
+                    </p>
                 </div>
             </div>
         </div>
     </div>
-    
+
 </x-app-layout>
