@@ -184,16 +184,11 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
 
 
     // PAYMENT FREQUENCY ROUTES
-    Route::get('/payment-frequencies', [paymentFrequencyController::class, 'index'])->name('payment-frequency.index')->middleware('auth');
-    Route::get('/payment-frequencies/create', [paymentFrequencyController::class, 'create'])->name('payment-frequency.create')->middleware('auth');
-    Route::post('/payment-frequencies', [paymentFrequencyController::class, 'store'])->name('payment-frequency.store')->middleware('auth');
-    Route::get('/payment-frequency/{payment_frequency_id}/edit', [paymentFrequencyController::class, 'edit'])->name('payment-frequency.edit')->middleware('auth');
-    Route::put('/payment-frequency/{payment_frequency_id}', [paymentFrequencyController::class, 'update'])->name('payment-frequency.update')->middleware('auth');
-    Route::delete('/payment-frequencies/{id}', [paymentFrequencyController::class, 'destroy'])->name('payment-frequency.destroy')->middleware('auth');
-    Route::resource('payment-frequency', PaymentFrequencyController::class);
-    Route::get('/payment-frequency/{payment_frequency_id}', [paymentFrequencyController::class, 'show'])->name('payment-frequency.show')->middleware('auth');
+  //  the resource route, which handles the full CRUD operations
+Route::resource('payment-frequency', PaymentFrequencyController::class)->middleware('auth');
+  
 
-    //JOB ROUTES
+//JOB ROUTES
     Route::get('/jobs', [jobController::class, 'index'])->name('job.index');
     Route::get('/jobs/create', [jobController::class, 'create'])->name('jobs.create');
     Route::post('/jobs', [jobController::class, 'store'])->name('jobs.store');

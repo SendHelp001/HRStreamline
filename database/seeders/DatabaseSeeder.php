@@ -3,7 +3,6 @@
 namespace Database\Seeders;
 
 use App\Models\User;
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -14,12 +13,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // Clear the table before inserting
-        DB::table('users')->truncate();
-        DB::statement('SET FOREIGN_KEY_CHECKS=0;');
-        User::truncate(); // Truncate users table
-        DB::statement('SET FOREIGN_KEY_CHECKS=1;');
-        
+        // For PostgreSQL, disable foreign key checks by truncating with cascade
+        DB::statement('TRUNCATE TABLE users RESTART IDENTITY CASCADE');
+
+        // Seed users table
         DB::table('users')->insert([
             [
                 'name' => 'admin',
@@ -27,13 +24,6 @@ class DatabaseSeeder extends Seeder
                 'password' => bcrypt('admin123'),
                 'role' => 'admin',
             ],
-            [
-                'name' => 'manager',
-                'email' => 'manager@example.com',
-                'password' => bcrypt('manager123'),
-                'role' => 'manager',
-            ],
         ]);
     }
-    
 }
